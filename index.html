@@ -232,59 +232,69 @@
         </div>
     </section>
 <section id="gallery" class="w-full max-w-6xl p-6 my-10 border-t border-white/10 pt-10">
-    <h2 class="text-2xl font-bold mb-8 pl-2 border-l-4 border-blue-500 text-white">Gallery & Social</h2>
+    <h2 class="text-2xl font-bold mb-8 pl-2 border-l-4 border-blue-500">Gallery & Social</h2>
     
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-start">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
         
-        <div class="gallery-item">
-            <blockquote class="twitter-tweet" data-theme="dark" data-cards="hidden" data-conversation="none">
+        <div class="social-card">
+            <blockquote class="twitter-tweet" data-theme="dark">
                 <a href="https://twitter.com/arfdao/status/1997938130117386561"></a>
             </blockquote>
         </div>
 
-        <div class="gallery-item">
-            <blockquote class="twitter-tweet" data-theme="dark" data-cards="hidden" data-conversation="none">
+        <div class="social-card">
+            <blockquote class="twitter-tweet" data-theme="dark">
                 <a href="https://twitter.com/arfdao/status/1985420205648921014"></a>
             </blockquote>
         </div>
 
-        <div class="gallery-item">
-            <blockquote class="twitter-tweet" data-theme="dark" data-cards="hidden" data-conversation="none">
+        <div class="social-card">
+            <blockquote class="twitter-tweet" data-theme="dark">
                 <a href="https://twitter.com/justbiar/status/1982122027143037116"></a>
             </blockquote>
         </div>
 
-        <div class="gallery-item">
-            <blockquote class="twitter-tweet" data-theme="dark" data-cards="hidden" data-conversation="none">
+        <div class="social-card">
+            <blockquote class="twitter-tweet" data-theme="dark">
                 <a href="https://twitter.com/justbiar/status/1974759763117506901"></a>
             </blockquote>
         </div>
 
+        <div class="social-card border border-white/10 rounded-xl overflow-hidden">
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7374931015364132865?collapsed=1" 
+                    height="450" 
+                    width="100%" 
+                    frameborder="0" 
+                    allowfullscreen="" 
+                    title="LinkedIn Post"></iframe>
+        </div>
+
     </div>
 
-    <div class="mt-8 rounded-xl overflow-hidden border border-white/10 bg-white/5">
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7374931015364132865?collapsed=1" height="500" width="100%" frameborder="0"></iframe>
-    </div>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
     <style>
-        .gallery-item {
-            overflow: hidden;
-            border-radius: 0.75rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 0.03);
-            min-height: 250px;
+        .social-card {
+            width: 100%;
+            min-height: 450px; 
             display: flex;
-            justify-content: center;
+            flex-direction: column;
         }
-        
-        .gallery-item iframe {
-            transform: scale(0.85); 
-            transform-origin: top center;
-            margin-bottom: -15%; 
+
+       
+        .social-card .twitter-tweet {
+            margin: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+
+        @media (max-width: 768px) {
+            .social-card {
+                min-height: auto;
+            }
         }
     </style>
-    
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </section>
   
     
