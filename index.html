@@ -1,54 +1,132 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArfDAO - Yakında</title>
+    <title>Benim Portföyüm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#0a0a0a',
+                        cardbg: '#171717',
+                        accent: '#3b82f6', 
+                        textgray: '#a3a3a3'
+                    },
+                    fontFamily: {
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #0d0d0d; /* Koyu Zemin */
-            color: #ffffff;
-            font-family: 'Courier New', Courier, monospace; /* Tekno/Kod havası */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-        }
-        h1 {
-            font-size: 4rem;
-            margin-bottom: 10px;
-            letter-spacing: 5px;
-        }
-        p {
-            font-size: 1.5rem;
-            color: #888;
-        }
-        .btn {
-            margin-top: 30px;
-            padding: 15px 30px;
-            border: 2px solid #fff;
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background-color: #fff;
-            color: #000;
-        }
+        body { background-color: #0a0a0a; color: white; }
+        .code-box { background: #111; border: 1px solid #333; padding: 1.5rem; border-radius: 0.5rem; font-family: monospace; }
+        .keyword { color: #c678dd; } /* Mor */
+        .string { color: #98c379; } /* Yeşil */
+        .property { color: #e06c75; } /* Kırmızı */
     </style>
 </head>
-<body>
+<body class="font-sans antialiased min-h-screen flex flex-col items-center">
 
-    <h1>ARFDAO</h1>
-    <p>Geleceği İnşa Ediyoruz.</p>
-    <p>Çok Yakında.</p>
-    
-    <a href="#" class="btn">Bize Ulaşın</a>
+    <nav class="w-full max-w-4xl p-6 flex justify-between items-center">
+        <div class="text-xl font-bold tracking-tighter">Biar</div>
+        <div class="space-x-4 text-sm text-textgray">
+            <a href="#projects" class="hover:text-white transition">Projeler</a>
+            <a href="#experience" class="hover:text-white transition">Deneyim</a>
+            <a href="#contact" class="hover:text-white transition">İletişim</a>
+        </div>
+    </nav>
+
+    <header class="w-full max-w-4xl p-6 mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div>
+            <h1 class="text-5xl font-extrabold tracking-tight mb-4">
+                Geleceği <br> <span class="text-accent">İnşa Ediyorum.</span>
+            </h1>
+            <p class="text-textgray text-lg mb-6">
+                Web3 Geliştiricisi 
+            </p>
+            <div class="flex gap-4">
+                <a href="#contact" class="bg-white text-black px-6 py-2 rounded-full font-medium hover:bg-gray-200 transition">İletişime Geç</a>
+                <a href="#" class="border border-white/20 px-6 py-2 rounded-full font-medium hover:bg-white/10 transition">GitHub</a>
+            </div>
+        </div>
+
+        <div class="code-box shadow-2xl">
+            <p><span class="keyword">const</span> <span class="property">profile</span> = {</p>
+            <p class="pl-4"><span class="property">name</span>: <span class="string">"Senin Adın"</span>,</p>
+            <p class="pl-4"><span class="property">role</span>: <span class="string">"Full Stack Developer"</span>,</p>
+            <p class="pl-4"><span class="property">stack</span>: [<span class="string">"React"</span>, <span class="string">"Solidity"</span>, <span class="string">"Node.js"</span>],</p>
+            <p class="pl-4"><span class="property">status</span>: <span class="string">"Building..."</span></p>
+            <p>};</p>
+        </div>
+    </header>
+
+    <section class="w-full max-w-4xl p-6 grid grid-cols-2 md:grid-cols-4 gap-6 my-10 border-y border-white/10 py-10">
+        <div>
+            <div class="text-3xl font-bold">+9</div>
+            <div class="text-textgray text-sm">On Onchain</div>
+        </div>
+        <div>
+            <div class="text-3xl font-bold">+3</div>
+            <div class="text-textgray text-sm">Proje</div>
+        </div>
+        <div>
+            <div class="text-3xl font-bold">+2</div>
+            <div class="text-textgray text-sm">Hackathon</div>
+        </div>
+        <div>
+            <div class="text-3xl font-bold">100%</div>
+            <div class="text-textgray text-sm">Tutku</div>
+        </div>
+    </section>
+
+    <section id="projects" class="w-full max-w-4xl p-6">
+        <h2 class="text-2xl font-bold mb-6">Seçilmiş Projeler</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-cardbg p-6 rounded-xl border border-white/5 hover:border-accent/50 transition cursor-pointer group">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold group-hover:text-accent transition">Arfhe Wallet</h3>
+                    <span class="text-xs bg-white/10 px-2 py-1 rounded">v2.0</span>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="w-full max-w-4xl p-6 my-10">
+        <h2 class="text-2xl font-bold mb-6">Deneyim</h2>
+        <div class="space-y-6">
+            <div class="flex gap-4">
+                <div class="w-32 text-textgray text-sm text-right pt-1">2024 - Günümüz</div>
+                <div class="border-l-2 border-accent pl-6 pb-2">
+                    <h3 class="text-lg font-bold">Founder | Arfdao </h3>
+                    <div class="text-accent text-sm mb-2">Arfdev</div>
+                    <p class="text-textgray text-sm">Arfhe Wallet Ekip Lideri</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <div class="w-32 text-textgray text-sm text-right pt-1">2022 - 2024</div>
+                <div class="border-l-2 border-white/20 pl-6 pb-2">
+                    <h3 class="text-lg font-bold">Lead</h3>
+                    <div class="text-accent text-sm mb-2">Blockchain Society</div>
+                    <p class="text-textgray text-sm">Yönetim</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="w-full max-w-4xl p-6 mt-10 mb-20 text-center">
+        <h2 class="text-3xl font-bold mb-4">Birlikte harika bir şey yapalım.</h2>
+        <a href="mailto:seninmailin@gmail.com" class="text-accent hover:underline text-lg">seninmailin@gmail.com</a>
+        <div class="mt-8 text-textgray text-sm">
+            © 2025 biar Tüm hakları saklıdır.
+        </div>
+    </footer>
 
 </body>
 </html>
