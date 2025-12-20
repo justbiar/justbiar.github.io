@@ -253,14 +253,27 @@
             </blockquote>
         </div>
 
-        <div class="social-card border border-white/10 rounded-xl overflow-hidden">
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7374931015364132865?collapsed=1" 
-                    height="450" 
-                    width="100%" 
-                    frameborder="0" 
-                    allowfullscreen="" 
-                    title="LinkedIn Post"></iframe>
-        </div>
+        <div class="social-card border border-white/10 rounded-xl overflow-hidden bg-[#171717] relative">
+            
+    <div class="linkedin-dark-mode">
+        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7374931015364132865?collapsed=1" 
+                height="450" 
+                width="100%" 
+                frameborder="0" 
+                allowfullscreen="" 
+                title="LinkedIn Post"></iframe>
+    </div>
+</div>
+
+<style>
+   
+    .linkedin-dark-mode {
+        filter: invert(0.9) hue-rotate(180deg);
+        background-color: #fff; 
+    }
+
+
+</style>
 
     </div>
 
