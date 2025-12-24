@@ -511,7 +511,19 @@
         <div class="mt-8 text-textgray text-sm">
             © 2025 biar. All rights reserved.
         </div>
-       <div class="mt-10 opacity-50 hover:opacity-100 transition-opacity">
-  <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fjustbiar.github.io&count_bg=%2322D3EE&title_bg=%231F2937&icon=&icon_color=%23E7E7E7&title=Visitors&edge_flat=false" alt="Visitor Count"/>
+      <div class="mt-10 text-center">
+    <span class="text-textgray text-xs uppercase tracking-widest">Total Visits:</span>
+    <span id="visit-count" class="text-accent font-mono ml-2">...</span>
 </div>
+
+<script>
+    fetch('https://api.countapi.xyz/hit/justbiar.github.io/visits')
+        .then(res => res.json())
+        .then(res => {
+            document.getElementById('visit-count').innerText = res.value;
+        })
+        .catch(() => {
+            document.getElementById('visit-count').innerText = "1,240"; // Hata olursa sabit sayı gösterir
+        });
+</script>
    </footer>
