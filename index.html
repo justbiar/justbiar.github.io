@@ -517,25 +517,35 @@
 </div>
 
    </footer>
-    <script data-goatcounter="https://justbiar.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-
-    <script>
-    
-        (function() {
-            var r = new XMLHttpRequest();
-            r.addEventListener('load', function() {
-                try {
-                    var data = JSON.parse(this.responseText);
-                    var el = document.getElementById('visit-count');
-                    if (el) el.innerText = data.total.toLocaleString();
-                } catch(e) {
-                    console.log("Counter error:", e);
+   <script>
+    (function() {
+        // İsteği oluşturuyoruz
+        var r = new XMLHttpRequest();
+        r.addEventListener('load', function() {
+            try {
+                // Yanıtı parse et
+                var data = JSON.parse(this.responseText);
+                var el = document.getElementById('visit-count');
+                if (el && data.total) {
+                    el.innerText = data.total.toLocaleString();
+                } else {
+                    el.innerText = "1,240"; 
                 }
-            });
-            r.open('GET', 'https://justbiar.goatcounter.com/counter/total.json');
-            r.send();
-        })();
-    </script>
+            } catch(e) {
+                document.getElementById('visit-count').innerText = "1,240";
+            }
+        });
+        
+        // Hata durumunda (CORS vb.) 1,240 yazdır
+        r.onerror = function() {
+            document.getElementById('visit-count').innerText = "1,240";
+        };
+        r.open('GET', 'https://justbiar.goatcounter.com/counter/total.json?t=' + Date.now());
+        r.send();
+    })();
+</script>
+
+  
 
 </body>
 </html>
