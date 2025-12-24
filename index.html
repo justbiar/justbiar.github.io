@@ -511,39 +511,19 @@
         <div class="mt-8 text-textgray text-sm">
             © 2025 biar. All rights reserved.
         </div>
-      <div class="flex items-center gap-2">
-    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-    <img src="https://justbiar.goatcounter.com/counter/total.svg" alt="Visitors" class="h-5 invert opacity-80">
+   <div class="flex flex-col items-center justify-center mt-20 pb-10 opacity-60">
+    <div class="flex items-center gap-2 mb-3">
+        <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+        </span>
+        <span class="text-[10px] text-gray-500 uppercase tracking-[0.3em]">Traffic Logs</span>
+    </div>
+    
+    <img src="https://komarev.com/ghpvc/?username=justbiar&color=22D3EE&style=flat-square&label=VISITORS" 
+         alt="justbiar profile counter" 
+         class="h-5">
 </div>
-
-   </footer>
-   <script>
-    (function() {
-        // İsteği oluşturuyoruz
-        var r = new XMLHttpRequest();
-        r.addEventListener('load', function() {
-            try {
-                // Yanıtı parse et
-                var data = JSON.parse(this.responseText);
-                var el = document.getElementById('visit-count');
-                if (el && data.total) {
-                    el.innerText = data.total.toLocaleString();
-                } else {
-                    el.innerText = "1,240"; 
-                }
-            } catch(e) {
-                document.getElementById('visit-count').innerText = "1,240";
-            }
-        });
-        
-        // Hata durumunda (CORS vb.) 1,240 yazdır
-        r.onerror = function() {
-            document.getElementById('visit-count').innerText = "1,240";
-        };
-        r.open('GET', 'https://justbiar.goatcounter.com/counter/total.json?t=' + Date.now());
-        r.send();
-    })();
-</script>
 
   
 
